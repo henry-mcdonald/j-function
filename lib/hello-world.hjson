@@ -1,0 +1,14 @@
+{
+    name: hello-world
+    purpose: demonstrate how to write, import, and call a J-function
+    inherits-from: function.base
+    type-checks: output
+    input: any
+    output: varchar-20
+    logic: [
+        return-value = "hello world"
+    ]
+    return-logic: {
+        logic: name-like-return-value
+    }
+}

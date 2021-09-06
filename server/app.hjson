@@ -1,0 +1,52 @@
+{   
+    basic-server: {
+        name: basic-server
+        purpose: illustrate a very minimal j-server
+        inherits-from: standard-library.server.base
+        method-is-unique-logic: name
+        // ie the way it works in Python but not Java. One method per name.
+        // Java would implement something perhaps called name-params. 
+        // ie One method per name + params combination. (ie method overloading)
+        method-inheritance-logic: most-recent-ancestor-overrides-others
+        // ie the way it works in Java, Python, every language that I am aware of. 
+        // If a method is overriden, then, 
+        // future subclasses will also recive the overriden version.
+        methods: {
+            hello-world:{
+                input: any
+                output: varchar-20
+                specified-as: self.lib.hello-world
+            }
+            get-current-epoch-as-int: {
+                input: any
+                output: int
+            }
+            which-of-your-methods-can-i-access:{
+                input: auth-like
+                output: {
+                    type: array
+                    contains: method-like
+                }
+            }
+        }
+    }
+    tease-server: {
+        name: illustrative-j-server
+        purpose: give you a little tease about where this all goes.
+        inherits-from: standard-library.server.base.frontend 
+
+        method-is-unique-logic: name 
+        // the above means that if two methods share the same name, let us suppose one is inherited and another is defined, 
+        // then, at most one can be valid. The compiler must implement only the one that is valid.
+        method-inheritance-logic: most-recent-ancestor-overrides-others
+        // most-recent-ancestor-overrides-others means that, if our superclass is itself overriding a method,
+        // then of course we will use our superclass's implementation rather than his own superclass's implementation.
+        methods:{
+            render: {
+                input: auth
+                output: valid-html
+                specification: self.methods.hello-world
+            }
+        }
+    }
+}

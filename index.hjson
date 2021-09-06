@@ -1,0 +1,12 @@
+{
+    name: index
+    purpose: '''
+
+    sit at root 
+    point you to entry point
+    then u may enter the tree of knowledge & wisdoms
+
+    '''
+
+    entry-point: self.server.app.basic-server
+}

@@ -1,0 +1,208 @@
+{
+    getting-started: '''
+
+    There is not yet anything 'runnable' in this repo. It is only reading material.
+
+    However, to understand the import structure, you can refer to index.hjson. 
+
+    This is the entry point of the code. Go to him, he will tell you where to go next. 
+
+    That is how you understand the structure. Go now, go to him. 
+
+    Self refers to the namespace. It interchangably could be the file system, or within a JSON document. 
+
+    '''
+
+    
+    first-poast-the-dateis-september-six: '''
+
+    ///////////////// INTRO ////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    What I want to talk to you today about is the construct called the J-function.
+
+    This is something I have created.
+
+    It may already exist in some form. Most things exist in some form, in some other location, roughly speaking. 
+    
+    I sit on a chair, and also King Solomon sat on a chair. His chair may have been splendid and made of gold, and old 
+    growth wood, and lion skin, but my chair can fold. His chair cannot do that. 
+    
+    If he wanted to trade me, his chair for mine, I would be open to discussing. 
+
+    Publius
+
+    ///////////////// CHAPTER 1: FUNCTION-QUALITY /////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    Now I will talk about J-functions. I will lean heavily on comparison to Python programming language to explain J-functions. 
+    And also, webservices. If this does not suit your taste I must apologize.
+
+    Now I begin.
+
+    A function is some kind of abstract thing that takes an input and returns an output. 
+    It is, we may say, a mathematical concept. 
+    
+    Those of you who know, will know that functions may also take multiple inputs, or return multiple outputs. 
+    
+    Those of you who know you know, and you know I know that you know you know I know, will know what I mean when I say--  
+    --that those are actually really the same thing. (I think.)
+
+
+    I will suggest that while maybe everything in existence has ‘function-quality’ ie,
+     it may respond to input with output, some things have much more of it than others. 
+     Plato’s shadows on the cave, etc. The mathematical ideal is closely approached in some cases. 
+    Recall that the scientists tell us everything has 'wave-quality,' some more than others. This is something like what I mean here.
+
+
+    A couple examples of things that have a high degree of ‘function-quality’ include functions in Python, and, any API
+    .For purposes of increasing tangibility while reducing longevity of this example, I will use the ‘jokes API’
+
+    https://official-joke-api.appspot.com/jokes/programming/ten
+
+    Go click on that and get some jokes. See, it’s a function. You provide an input, and you get an output.
+
+    Hmmmm….
+
+    I am now thinking that this was not a good example of my point. Let me try again.
+
+    Consider instead, an API where you tell it your location and it will tell you what time it is in the time zone that you are in. 
+    This is a little more useful, the output is a little more predictable from the input, this API has more 
+    ‘function-quality’ than the jokes API. It’s an improvement. 
+    
+    ‘Function-quality’ probably has something to do with usefulness. 
+    I’m not saying that function quality is the only aspect of usefulness. But it has something to do with it.
+
+    Now, I talk about another kind of function. This kind of function is a Python function. 
+
+    Almost any function written in the language Python will have some degree of ‘function-quality’, 
+    and many will have a very high degree of it. 
+    You give an input and you get an output. There is a relationship between them, too.
+
+    Publius
+
+    ///////////////// CHAPTER 2: COMPARISON OF TYPES //////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    I make the following observations about these two kinds of functions, webservices and python functions.
+
+    They both have function-quality
+    They both are used extensively in powering modern digital infrastructure
+    They have a number of key differences
+
+    I will now expand on the last point. Some key differences are:
+
+    1. Webservices sit on an open protocol, and therefore they always require authentication & authorization. 
+    This is a necessity from the laws of economics. Webservices usually control access to some economic resource, 
+    therefore, they require a gatekeeper or lock mechanism to protect that economic resource.
+    
+    2.Webservices tend to have well-defined interfaces. This again comes from economic necessity. To sell access to a resource, 
+    you must instruct your customer about how to access. Python functions are purely imperative. You tell them to do something, 
+    and then they will do it. 
+
+    I will now give some comments on the advantages and disadvantages of each of these.
+    
+    1. Economics forces webservice providers to insist on well-defined interfaces, and robust authentication/authorization checks. 
+    These requirements add a substantial amount of cost to the development of webservices vs Python functions, but, 
+    on the flipside, the insistence on communication through interfaces and restriction on access of data implements the spirit of
+    Object-Oriented Programming, particularly encapsulation, in a more pure way than any time traveller could have imagined. 
+
+    2. Webservices have to travel physical distance, so they add latency. Python functions do not. 
+    (If webservices  from different companies can be geographically hosted by an aggregator such as AWS that keeps them close together, 
+    then this latency may reduce substantially).
+
+    Publius
+
+    ///////////////// CHAPTER 2.7: IRRELEVANT ADDENDUM ////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    I also note the following points which are both completely irrelevant to the main point.:
+    A webservice can be a way to sell intellectual property. It is a way to make money from closed-source code while keeping
+     that code programmable.
+    Aggregators of APIs may be able to substantially reduce, but not to the extent that it is unnoticeable by the user, 
+    the latency from APIs. I am bullish on RapidAPI, and AWS. 
+
+    Publius
+
+    ///////////////// CHAPTER 3: J-FUNCTIONS //////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    Now I can start to talk about J-functions. 
+    
+    A J-function is a way to write functions in a very abstract manner such that they could be ported either to Python for local use, 
+    or for deployment to webservices, with minimal friction. Portability & Flexibility. 
+
+    And J-functions would also be able to support some other things, too.
+    1. Type-checking (absent from Python, but now being gradually incorporated)
+    2. Self-documenting, every function will contain its metadata (of course, this can be stripped during the final phase of the build process)
+    3. Turnkey function-level implementation into a variety of different programming languages
+    4. Separation and customization of the following:
+        A. Degree of type-strictness (strict is good for experts, maybe not the best for newcomers)
+        B. Syntax (curly braces or indentations, these both are handled by a user-facing layer, 
+            and would each compile to a common format)
+        C. OS-level concerns. J-functions themselves are not aware of the existence of file systems or operating systems, 
+            but only abstract namespaces.
+        D. Provider-level concerns (J- functions are unaware of any company called Amazon Web Services or other)
+        E. Inbuilt authentication & authorization (absent from every programming language, but features of webservices and production software). I want to build it into the language itself, at the most granular level possible. Each function may approve or deny the request of any other function, even in the local environment. This will lead to an extremely high degree of encapsulation, never before achieved in self-contained codebases.
+        F. Inbuilt test cases. A J-function is not defined in code (result), but in expectation (test cases). 
+            J-functions can have any number of implementations in actual code, and I can pick and choose which implementation 
+            I desire based on my use case. If I need speed, then that is what I optimize for. If I need reliability, 
+            then that is what I optimize for. Oh, and I forgot to mention something. You can do it too!
+            And you can also delegate a lot of this to a compilation layer.
+        G. An extreme degree of interoperability/versionless. Because J-functions are unaware of their implementation, 
+            this implementation can be flexibly switched around.
+        G.7--ADDENDUM TO LETTER G: I make an additional comment. Getting rid of versions entirely is to set the bar too high. 
+            We are only men, and men are fallible. We do not assume the perfection of God or gods. 
+            In more civilized times, we would be burned as heretics for this. For Windows 10 to be the final version was hubris. '
+            And when they went back on this, and their hubris revealed, we were afflicted with a divine punishment, 
+            a plague not seen in a century.  
+
+    Publius
+
+    ///////////////// CHAPTER 4: ON NAMING //////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        The first specification of J-language is to be called Bluejay. 
+        A Bluejay is symbolic of Spring. 
+        Spring is symbolic of beginnings, 
+        and this is the beginning. 
+        
+        Future specifications may also be called by the names of birds. 
+        A version of J-language that has the intention of enabling greater speed, may be called hummingbird, or raptor. 
+        A version that anticipates or teases at obsolescence of other technologies or versions, may be called Vulture, or Albatross. 
+        I think it is fine if compilation or companion technologies to J-language are also called by the names of birds. I’m not against it. 
+        There are plenty of kinds of birds, enough to go around. 
+        I don’t know nearly as many kinds of birds as I would like to. There are hierarchies of birds, too. 
+        There are flightless birds, there are birds of prey, there are birds of paradise. There are mythological birds. 
+        There are domestic birds, some used for meat and eggs, and others kept as pets. 
+        There are also birds that sing. They sing bird songs. 
+        I would like to hear a bird song, but I do not really hear birds since I live downtown. 
+        But I think there may be some birds that perch on the tops of Concrete buildings. 
+        It reminds them of cliffs, it feels like home. But I do not know if they sing songs!
+        In fact, pigeons are cliff birds. Not a lot of people know this. Understand now why they are at home in cities! 
+        This, as well as their history of domestication by humans. They are the ideal inhabitants. 
+
+        Pigeons are re-wilding, a new kind of bird emerges. What will we call them then?
+
+        -- Henry
+
+        PS please see in this repo some sample JEN code. 
+        You may need to install some extension for Hjson files. 
+        I am also working on a compiler(there will be many, so you get to pick and choose). 
+        
+        Sample project to be released soon. Version Bluejay on the way. Stay Tuned. 
+
+        -- Henry
+
+
+        Publius
+
+    '''
+
+    License: '''
+    This product is licensed under MIT LICENSE #666. You are free to reproduce and republish,
+    and redistribute in any manner you see fit. Provided, that upon your death, your soul shall
+    be marked payable to the author of this document, and receivable under temporary
+    custodianship of Mr. Lucifer, referred to hereafter, as, 'the guy', 'champ', or 'chief'
+    '''
+}
